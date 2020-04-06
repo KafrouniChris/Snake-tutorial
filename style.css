@@ -1,15 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&display=swap');
 
-body{
+body {
     font-family: 'IM Fell French Canon SC', serif;
-    text-align: center;
     background: rgb(150, 150, 150);
     color: #e6e6e6;
 }
-h1{
-    margin: 10vh 0 10vh 0;
+.container{
+    display: grid;
+    grid-column: 1fr 1fr 1fr 1fr;
+    grid-row: 1fr 2fr;
+    grid-template-areas:
+        ". title title  ."
+        ". info  canvas .";
+    grid-gap: 10px;
+
+}
+
+#title {
+    background: #888181;
+    text-align: center;
+    grid-area: title;
     font-size: 70px;
 }
-.canvas{
+.canvas {
+
+    grid-area: canvas;
     background-color: #3e3e3e;
+}
+.info {
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    border: solid;
+    grid-area: info;
+    display: grid;
+    grid-column: 1fr 2fr 1fr 1fr;
+    grid-row: auto 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        ". score-title      score     ."
+        ". highScore-title  highScore ."
+        ". . . ."
+        ". . . .";
+}
+#score-title{
+
+    background: rgb(194, 153, 196);
+    grid-area: score-title;
+}
+#score{
+    background: rgb(130, 107, 131);
+    grid-area: score;
+}
+#highScore-title{
+    background: rgb(103, 115, 177);
+    grid-area: highScore-title;
+}
+#highScore{
+    background: rgb(125, 131, 164);
+    grid-area: highScore;
 }
